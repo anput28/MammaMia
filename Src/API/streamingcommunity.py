@@ -21,7 +21,7 @@ Public_Instance = config.Public_Instance
 Alternative_Link = env_vars.get('ALTERNATIVE_LINK')
 
 headers = Headers()
-request_manager = web.RequestManager()
+request_manager = web.RequestManager(f'https://streamingcommunity.{SC_DOMAIN}')
 
 
 async def get_version():

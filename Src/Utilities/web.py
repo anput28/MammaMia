@@ -4,15 +4,14 @@ from urllib.parse import urlparse
 import httpx
 from playwright.async_api import async_playwright
 
-from Src.Utilities.config import SC_DOMAIN
-
 chromium_path = "/usr/bin/chromium"
 #chromium_path = os.path.join(os.getcwd(), "chrome-win", "chrome.exe")
 
 
 class RequestManager:
-    def __init__(self, with_cookie: bool = True):
+    def __init__(self, base_url: str, with_cookie: bool = True):
         self.with_cookie = with_cookie
+        self.base_url = base_url
         self.cookies = None
         self.cookies_header = None
 
@@ -25,7 +24,7 @@ class RequestManager:
 
         context = await browser.new_context()
 
-        await context.request.get(f"https://streamingcommunity.{SC_DOMAIN}")
+        await context.request.get(self.base_url)
         self.cookies = await context.cookies()
         self.cookies_header = "; ".join(f"{cookie['name']}={cookie['value']}" for cookie in self.cookies)
 
@@ -37,14 +36,12 @@ class RequestManager:
             await self.__fetch_cookies()
 
         async with httpx.AsyncClient() as client:
-            parsed_url = urlparse(api)
-            base_url = f"{parsed_url.scheme}://{parsed_url.netloc}"
 
             headers = {
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36",
                 "Accept": "application/json" if get_json else "text/html",
-                "Referer": base_url,
-                "Origin": base_url,
+                "Referer": self.base_url,
+                "Origin": self.base_url,
             }
 
             if self.with_cookie:
