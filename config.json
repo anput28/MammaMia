@@ -10,7 +10,7 @@
              "domain": "bond"
          },
          "Mysterius":{
-             "enabled": "0"    
+             "enabled": "0"
          },
         "LordChannel":{
              "domain":"com"
@@ -27,14 +27,15 @@
         "DaddyLiveHD":{
             "enabled":"1"
         }
- },
- "General":{
-     "load_env": "0",
-     "HOST": "0.0.0.0",
-     "PORT": "8080",
-     "Public_Instance": "0",
-     "MediaProxy": ["http://mammamia-urlo.serv00.net:1984/"],
-     "ForwardProxy": [""],
-     "Proxy": [""]
- }
+  },
+  "General":{
+    "load_env": "0",
+    "HOST": "0.0.0.0",
+    "PORT": "8080",
+    "Public_Instance": "0",
+    "MediaProxy": ["http://mammamia-urlo.serv00.net:1984/"],
+    "ForwardProxy": [""],
+    "Proxy": [""],
+    "version": "1.2.6"
+  }
 }

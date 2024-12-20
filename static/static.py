@@ -1,6 +1,7 @@
 # static.py
+from Src.Utilities.config import version
 
-HTML = """
+HTML = f"""
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,10 +10,10 @@ HTML = """
     <link rel="icon" href="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/49647/pizza-emoji-clipart-md.png" type="image/x-icon">
     <title>Fast Search Example</title>
     <style>
-        * {
+        * {{
             box-sizing: border-box;
-        }
-        body, html {
+        }}
+        body, html {{
             margin: 0;
             padding: 0;
             width: 100%;
@@ -26,8 +27,8 @@ HTML = """
             align-items: flex-start;
             justify-content: center;
             overflow-y: auto;
-        }
-        #addon {
+        }}
+        #addon {{
             background: rgba(0, 0, 0, 0.8);
             padding: 0.5vh;
             border-radius: 10px;
@@ -35,37 +36,37 @@ HTML = """
             max-width: 100%;
             text-align: center;
             margin-top: 10vh;
-        }
-        .logo {
+        }}
+        .logo {{
             width: 12vh;
             margin: 0 auto;
             margin-bottom: 3vh;
             margin-top: -3vh;
-        }
-        .logo img {
+        }}
+        .logo img {{
             width: 100%;
             height: auto;
-        }
-        h1, h2, h3 {
+        }}
+        h1, h2, h3 {{
             margin: 0;
             text-shadow: 0 0 1vh rgba(0, 0, 0, 0.15);
-        }
-        h1 {
+        }}
+        h1 {{
             font-size: 4.5vh;
             font-weight: 700;
-        }
-        h2 {
+        }}
+        h2 {{
             font-size: 2vh;
             font-weight: normal;
             font-style: italic;
             opacity: 0.8;
             margin-bottom: 20px;
-        }
-        h3 {
+        }}
+        h3 {{
             font-size: 2.2vh;
             margin-bottom: 10px;
-        }
-        .provider-group {
+        }}
+        .provider-group {{
             display: flex;
             align-items: center; /* Vertically align items */
             justify-content: space-between; /* Spread items across the available space */
@@ -75,8 +76,8 @@ HTML = """
             border-radius: 5px;
             overflow: hidden;
             width: 100%;
-        }
-        .provider-group label {
+        }}
+        .provider-group label {{
             display: flex;
             align-items: center; /* Align items within label vertically centered */
             white-space: nowrap;
@@ -84,40 +85,40 @@ HTML = """
             text-overflow: ellipsis;
             flex-grow: 1; /* Let the label take as much space as possible */
             font-size: 2.2vh;
-        }
-        .fast-search {
+        }}
+        .fast-search {{
             display: flex;
             align-items: center; /* Align the Fast Search checkbox vertically centered */
             margin-left: 10px; /* Space between provider and Fast Search */
-        }
-        .fast-search input[type="checkbox"] {
+        }}
+        .fast-search input[type="checkbox"] {{
             margin-right: 0.5vh; /* Space between the checkbox and label */
             width: 3vh;
             height: 3vh;
-        }
-        .provider-group input[type="checkbox"] {
+        }}
+        .provider-group input[type="checkbox"] {{
             margin-right: 1.5vh;
             width: 4vh;
             height: 4vh;
-        }
-        .parent-container {
+        }}
+        .parent-container {{
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 100%;
-        }
-        .contact {
+        }}
+        .contact {{
             position: absolute;
             left: 0;
             bottom: 4vh;
             width: 100%;
             text-align: center;
-        }
-        .contact a {
+        }}
+        .contact a {{
             font-size: 1.4vh;
             font-style: italic;
-        }
-        button {
+        }}
+        button {{
             border: 0;
             outline: 0;
             color: white;
@@ -134,14 +135,14 @@ HTML = """
             width: 80%;
             max-width: 35vh;
             margin: 1vh auto;
-        }
-        button:hover {
+        }}
+        button:hover {{
             box-shadow: none;
-        }
-        button:active {
+        }}
+        button:active {{
             box-shadow: 0 0 0 0.5vh white inset;
-        }
-        #manifestBox {
+        }}
+        #manifestBox {{
             margin-top: 2vh;
             padding: 2vh;
             background: rgba(255, 255, 255, 0.2);
@@ -149,29 +150,29 @@ HTML = """
             display: none;
             text-align: left;
             white-space: pre-wrap;
-        }
-        #generateManifestButton {
+        }}
+        #generateManifestButton {{
             background: #4CAF50;
-        }
-        #installButton {
+        }}
+        #installButton {{
             background: #FF5722;
-        }
-        #installButton a {
+        }}
+        #installButton a {{
             color: white;
             text-decoration: none;
-        }
-        #additionalText {
+        }}
+        #additionalText {{
             margin-top: 2vh;
             font-size: 1.8vh;
             text-align: left;
-        }
+        }}
         /* Responsive adjustments for smaller screens */
-        @media (max-width: 600px) {
-            .provider-group label {
+        @media (max-width: 600px) {{
+            .provider-group label {{
                 font-size: 2vh;
                 white-space: nowrap;
-            }
-        }
+            }}
+        }}
     </style>
 </head>
 <body>
@@ -180,7 +181,7 @@ HTML = """
             <img src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/49647/pizza-emoji-clipart-md.png" alt="Logo">
         </div>
         <h1 class="name">Mamma Mia</h1>
-        <h2 class="version">v1.2.5</h2>
+        <h2 class="version">v{version}</h2>
         <div id="additionalText">
             <h2>This addon provides Movie, Series, Anime, and Live TV HTTPS Streams.<br> https://github.com/anput28/MammaMia/</h2>
         </div>
@@ -253,9 +254,9 @@ HTML = """
         <div id="manifestBox"></div>
     </div>
        <script>
-        function generateManifest() {
+        function generateManifest() {{
             let manifest = "|";
-            const providers = {
+            const providers = {{
                 "streamingcommunity": "SC",
                 "fast_search_sc": "SC_FS",
                 "lordchannel": "LC",
@@ -268,29 +269,29 @@ HTML = """
                 "cb01": "CB",
                 "ddlstream": "DDL",
                 "whvx": "WHVX"
-            };
+            }};
             
-            for (const id in providers) {
-                if (document.getElementById(id).checked) {
+            for (const id in providers) {{
+                if (document.getElementById(id).checked) {{
                     manifest += providers[id] + "|";
-                }
-            }
-            const instanceUrl = "{instance_url}";  // Keep http in the URL
+                }}
+            }}
+            const instanceUrl = "{{instance_url}}";  // Keep http in the URL
             const manifestUrl = instanceUrl + "/" + manifest + "/" + "manifest.json";
             return manifestUrl;
-        }
-        document.getElementById('generateManifestButton').addEventListener('click', function() {
+        }}
+        document.getElementById('generateManifestButton').addEventListener('click', function() {{
             const manifestUrl = generateManifest();
             document.getElementById("manifestBox").style.display = "block";
             document.getElementById("manifestBox").innerText = manifestUrl;
-        });
-        document.getElementById('installButton').addEventListener('click', function() {
+        }});
+        document.getElementById('installButton').addEventListener('click', function() {{
             let manifestUrl = generateManifest();
             manifestUrl = manifestUrl.replace("http://", "");
             manifestUrl = manifestUrl.replace("https://", "");
             const stremioUrl = "stremio://" + manifestUrl;
             window.location.href = stremioUrl;
-        });
+        }});
     </script>
 </body>
 </html>
