@@ -8,75 +8,63 @@
                "VX_PROXY": "0",
                "enabled": "1"
            },
+          "StreamingWatch":{
+              "url": "https://www.streamingwatch.org",
+              "SW_PROXY": "0",
+              "SW_ForwardProxy": "0",
+              "enabled":"1"
+          },
           "CB01":{
-              "url": "https://cb01.uno",
-              "CB_PROXY":"0",
+              "url": "https://cb01uno.uno",
+              "CB_PROXY":"1",
               "CB_ForwardProxy":"0",
               "MX_ForwardProxy":"0",
               "MX_PROXY":"0",
               "enabled":"1"
           },
           "Guardaserie":{
-              "url": "https://guardaserietv.asia",
+              "url": "https://guardaserietv.autos",
               "enabled":"1",
               "GS_ForwardProxy":"0",
-              "GS_PROXY":"0"
+              "GS_PROXY":"1"
           },
           "GuardaHD":{
               "url": "https://mostraguarda.stream",
               "enabled":"1",
               "GH_ForwardProxy":"0",
-              "GH_PROXY":"0"
+              "GH_PROXY":"1"
           },
           "Eurostreaming":{
-            "url": "https://eurostreamings.life",
+            "url": "https://eurostream.ing",
             "enabled": "1",
             "ES_ForwardProxy": "0",
-            "ES_PROXY": "0"
+            "ES_PROXY": "1"
           },  
           "Guardaflix":{
-            "url": "https://guardaplay.blog",
+            "url": "https://guardaplay.space",
             "enabled": "1",
             "GF_ForwardProxy": "0",
-            "GF_PROXY": "0"
+            "GF_PROXY": "1"
           },
           "Guardoserie":{
             "url": "https://guardoserie.blog",
             "enabled": "1",
             "GO_ForwardProxy": "0",
-            "GO_PROXY": "0"
+            "GO_PROXY": "1"
           },
           "AnimeWorld":{
             "url": "https://www.animeworld.ac",
             "enabled":"1",
             "AW_ForwardProxy":"0",
             "AW_PROXY":"0"
-          },
-          "Realtime": {
-            "url": "https://realtime.it",
-            "enabled": "1",
-            "RT_ForwardProxy": "0",
-            "RT_PROXY": "0"
-          },
-          "Toonitalia": {
-            "url": "https://toonitalia.xyz",
-            "enabled": "1",
-            "TI_ForwardProxy": "0",
-            "TI_PROXY": "0"
           }
    },
-   "Captcha":{
-    "Uprot": {
-      "UT_ForwardProxy": "0",
-      "UT_PROXY": "0"
-    }
-   },
    "General":{
-       "load_env": "1",
+       "load_env": "0",
        "HOST": "0.0.0.0",
        "PORT": 8080,
-       "Name": "MammaMia",
-       "Icon": "🍕",
+       "Name": "Nello",
+       "Icon": "🐶",
        "level": "info",
        "Global_Proxy": "0"
        }
